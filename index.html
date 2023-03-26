@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <button class="backBtn"> &lt; </button>
+        <div class="line"></div>
+        <section>
+            <div class="first">
+                <a href="#">Jun</a>
+                <a href="#">Feb</a>
+                <a href="#">March</a>
+                <a href="#">April</a>
+                <a href="#">May</a>
+                <a href="#">June</a>
+            </div>
+            <div class="second">
+                <a href="#">July</a>
+                <a href="#">August</a>
+                <a href="#">Sep</a>
+                <a href="#">Oct</a>
+                <a href="#">Nov</a>
+                <a href="#">Dec</a>
+            </div>
+        </section>
+        <div class="line"></div>
+        <button id="forwardBtn"> &gt; </button>
+
+    </nav>
+
+    <script>
+        const forwardBtn = document.getElementById("forwardBtn");
+        const backBtn = document.querySelector(".backBtn")
+        const secondPer = document.querySelector(".second");
+        const firstPer = document.querySelector(".first")
+
+        forwardBtn.addEventListener("click", () => {
+            firstPer.style.transform = "translateX(-500px)";
+            firstPer.style.opacity = "0.1"
+            secondPer.style.transform = "translateX(0px)";
+            secondPer.style.opacity = "1"
+
+            forwardBtn.style.backgroundColor = "black"
+            backBtn.style.backgroundColor = "transparent"
+        })
+
+        backBtn.addEventListener("click", () => {
+            firstPer.style.transform = "translateX(0px)";
+            secondPer.style.transform = "translateX(500px)";
+            secondPer.style.opacity = "0.1"
+            firstPer.style.opacity = "1"
+            backBtn.style.backgroundColor = "black"
+            forwardBtn.style.backgroundColor = "transparent"
+        })
+
+    </script>
+
+
+</body>
+
+</html>
